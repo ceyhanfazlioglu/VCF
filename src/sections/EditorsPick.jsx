@@ -6,25 +6,21 @@ const EditorsPick = () => {
       id: 1,
       title: 'MEN',
       image: '/assets/editors-men.png',
-      size: 'large',
     },
     {
       id: 2,
       title: 'WOMEN',
       image: '/assets/editors-women.png',
-      size: 'large',
     },
     {
       id: 3,
       title: 'ACCESSORIES',
       image: '/assets/editors-accessories.png',
-      size: 'small',
     },
     {
       id: 4,
       title: 'KIDS',
       image: '/assets/editors-kids.png',
-      size: 'small',
     },
   ];
 
@@ -41,53 +37,56 @@ const EditorsPick = () => {
           </p>
         </div>
 
-        {/* Category Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          {/* Men - Large */}
-          <div className="md:col-span-2 md:row-span-2 relative overflow-hidden group cursor-pointer">
+        {/* Category Grid - Exact Figma Layout */}
+        <div className="flex flex-col md:flex-row gap-4 md:gap-[30px] max-w-[1050px] mx-auto">
+          {/* MEN - 510px × 500px */}
+          <div className="relative overflow-hidden group cursor-pointer md:w-[510px]">
             <img
               src={categories[0].image}
               alt={categories[0].title}
-              className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute bottom-6 left-6 bg-white px-6 py-3">
-              <h3 className="font-bold text-[#252B42]">{categories[0].title}</h3>
+            <div className="absolute bottom-6 left-6 md:left-[31px] md:bottom-6 bg-white px-[50px] py-[17px]">
+              <h3 className="font-bold text-[#252B42] text-base uppercase">{categories[0].title}</h3>
             </div>
           </div>
 
-          {/* Women - Large */}
-          <div className="md:col-span-2 md:row-span-2 relative overflow-hidden group cursor-pointer">
+          {/* WOMEN - Flexible width */}
+          <div className="relative overflow-hidden group cursor-pointer md:flex-1">
             <img
               src={categories[1].image}
               alt={categories[1].title}
-              className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute bottom-6 left-6 bg-white px-6 py-3">
-              <h3 className="font-bold text-[#252B42]">{categories[1].title}</h3>
+            <div className="absolute bottom-6 left-6 bg-white px-[50px] py-[17px]">
+              <h3 className="font-bold text-[#252B42] text-base uppercase">{categories[1].title}</h3>
             </div>
           </div>
 
-          {/* Accessories - Small */}
-          <div className="md:col-span-2 relative overflow-hidden group cursor-pointer">
-            <img
-              src={categories[2].image}
-              alt={categories[2].title}
-              className="w-full h-[242px] object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute bottom-6 left-6 bg-white px-6 py-3">
-              <h3 className="font-bold text-[#252B42]">{categories[2].title}</h3>
+          {/* Right Column - ACCESSORIES & KIDS stacked */}
+          <div className="flex flex-col gap-4 md:gap-[16px] md:w-[240px]">
+            {/* ACCESSORIES - ~242px height */}
+            <div className="relative overflow-hidden group cursor-pointer">
+              <img
+                src={categories[2].image}
+                alt={categories[2].title}
+                className="w-full h-[200px] md:h-[242px] object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-[24px] py-[12px]">
+                <h3 className="font-bold text-[#252B42] text-sm uppercase whitespace-nowrap">{categories[2].title}</h3>
+              </div>
             </div>
-          </div>
 
-          {/* Kids - Small */}
-          <div className="md:col-span-2 relative overflow-hidden group cursor-pointer">
-            <img
-              src={categories[3].image}
-              alt={categories[3].title}
-              className="w-full h-[242px] object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute bottom-6 left-6 bg-white px-6 py-3">
-              <h3 className="font-bold text-[#252B42]">{categories[3].title}</h3>
+            {/* KIDS - ~242px height */}
+            <div className="relative overflow-hidden group cursor-pointer">
+              <img
+                src={categories[3].image}
+                alt={categories[3].title}
+                className="w-full h-[200px] md:h-[242px] object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-[39px] py-[12px]">
+                <h3 className="font-bold text-[#252B42] text-sm uppercase">{categories[3].title}</h3>
+              </div>
             </div>
           </div>
         </div>

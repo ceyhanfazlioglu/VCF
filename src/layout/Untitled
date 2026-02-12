@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, Instagram, Youtube, Facebook, Twitter, Search, ShoppingCart, Heart, User, Menu, X } from 'lucide-react';
+import { Phone, Mail, Instagram, Youtube, Facebook, Twitter, Search, ShoppingCart, Heart, User } from 'lucide-react';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <header className="w-full">
-      {/* Top Bar - Hidden on mobile */}
-      <div className="hidden md:block bg-[#252B42] text-white">
+      {/* Top Bar */}
+      <div className="bg-[#252B42] text-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-row justify-between items-center py-2 text-sm">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center py-2 text-sm">
             {/* Contact Info */}
-            <div className="flex items-center gap-6">
+            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 <span>(225) 555-0118</span>
@@ -22,10 +20,12 @@ const Header = () => {
                 <span>michelle.rivera@example.com</span>
               </div>
             </div>
+
             {/* Promo Text */}
-            <div className="text-center">
+            <div className="hidden md:block text-center py-2 md:py-0">
               Follow Us and get a chance to win 80% off
             </div>
+
             {/* Social Links */}
             <div className="flex items-center gap-2">
               <span>Follow Us :</span>
@@ -68,7 +68,6 @@ const Header = () => {
 
             {/* Right Side Icons */}
             <div className="flex items-center gap-4">
-              {/* Desktop only */}
               <Link to="/login" className="hidden md:flex items-center gap-1 text-[#23A6F0] hover:underline">
                 <User className="w-4 h-4" />
                 <span className="text-sm">Login / Register</span>
@@ -84,41 +83,9 @@ const Header = () => {
                 <Heart className="w-5 h-5" />
                 <span className="text-sm">1</span>
               </button>
-
-              {/* Mobile Hamburger */}
-              <button
-                className="md:hidden text-[#252B42]"
-                onClick={() => setMenuOpen(!menuOpen)}
-              >
-                {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
             </div>
           </div>
         </div>
-
-        {/* Mobile Menu Dropdown */}
-        {menuOpen && (
-          <div className="md:hidden border-t bg-white">
-            <nav className="container mx-auto px-4 py-4 flex flex-col items-center gap-6 text-lg">
-              <Link to="/" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>Home</Link>
-              <Link to="/shop" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>Shop</Link>
-              <Link to="/about" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>About</Link>
-              <Link to="/blog" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>Blog</Link>
-              <Link to="/contact" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>Contact</Link>
-              <Link to="/pages" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>Pages</Link>
-              <div className="flex items-center gap-6 pt-2 border-t w-full justify-center">
-                <Link to="/login" className="flex items-center gap-1 text-[#23A6F0]">
-                  <User className="w-5 h-5" />
-                  <span>Login / Register</span>
-                </Link>
-                <button className="flex items-center gap-1 text-[#23A6F0]">
-                  <Heart className="w-5 h-5" />
-                  <span>1</span>
-                </button>
-              </div>
-            </nav>
-          </div>
-        )}
       </div>
     </header>
   );

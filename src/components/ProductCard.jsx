@@ -7,12 +7,12 @@ const ProductCard = ({ product }) => {
   return (
     <Link to={`/product/${id}`} className="group">
       <div className="bg-white">
-        {/* Product Image */}
+        {/* Product Image - Mobile: full height visible, Desktop: same */}
         <div className="relative overflow-hidden bg-gray-100">
           <img 
             src={image} 
             alt={title}
-            className="w-full h-[300px] sm:h-[400px] object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-[427px] md:h-[300px] lg:h-[400px] object-cover object-top group-hover:scale-105 transition-transform duration-300"
           />
         </div>
 

@@ -10,14 +10,14 @@ const HeroCarousel = () => {
       season: 'SUMMER 2020',
       title: 'NEW COLLECTION',
       description: 'We know how large objects will act, but things on a small scale.',
-      bgColor: 'bg-[#23A6F0]',
+      image: '/assets/hero-woman-2.png',
     },
     {
       id: 2,
       season: 'SUMMER 2020',
       title: 'NEW COLLECTION',
       description: 'We know how large objects will act, but things on a small scale.',
-      bgColor: 'bg-[#23A6F0]',
+      image: '/assets/hero-woman.jpg',
     },
   ];
 
@@ -30,41 +30,49 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] lg:h-[716px] overflow-hidden">
+    <div className="relative w-full h-[500px] md:h-[600px] lg:h-[716px] bg-[#23A6F0] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
           className={`absolute inset-0 transition-opacity duration-500 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          } ${slide.bgColor}`}
+            index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
         >
-          <div className="container mx-auto px-4 h-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full items-center">
-              {/* Left Content */}
-              <div className="text-white space-y-6 z-10">
-                <h5 className="text-sm md:text-base font-bold tracking-wider">
-                  {slide.season}
-                </h5>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  {slide.title}
-                </h1>
-                <p className="text-base md:text-xl text-white/90 max-w-md">
-                  {slide.description}
-                </p>
-                <button className="bg-[#2DC071] hover:bg-[#26a55f] text-white px-8 md:px-10 py-3 md:py-4 rounded font-bold text-sm md:text-base transition-colors">
-                  SHOP NOW
-                </button>
-              </div>
+          {/* Background Image - FULL COVERAGE */}
+          <div className="absolute inset-0">
+            <img 
+              src={slide.image} 
+              alt="Hero"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
 
-              {/* Right Image */}
-              <div className="hidden md:flex items-center justify-center">
-                <div className="w-full h-full flex items-center justify-end">
-                  <div className="relative">
-                    <img 
-                      src="/assets/hero-woman-2.png" 
-                      alt="Model" 
-                      className="object-contain h-[500px] lg:h-[600px]"
-                    />
+          {/* Content Container - Figma: col-md-8 (599×331) */}
+          <div className="container mx-auto h-full relative z-10">
+            <div className="flex items-center h-full">
+              {/* Left Content Box - Figma measurements */}
+              <div className="w-full md:max-w-[599px] px-6 md:px-0">
+                <div className="flex flex-col gap-[35px]">
+                  {/* h5 - SUMMER 2020 */}
+                  <h5 className="text-base font-bold tracking-wide text-white">
+                    {slide.season}
+                  </h5>
+                  
+                  {/* h1 - NEW COLLECTION */}
+                  <h1 className="text-[40px] md:text-[58px] font-bold leading-[50px] md:leading-[80px] tracking-[0.2px] text-white">
+                    {slide.title}
+                  </h1>
+                  
+                  {/* h4 - Description (376×60) */}
+                  <h4 className="text-xl leading-[30px] tracking-[0.2px] text-white max-w-[376px]">
+                    {slide.description}
+                  </h4>
+                  
+                  {/* CTA Button */}
+                  <div>
+                    <button className="bg-[#2DC071] hover:bg-[#26a55f] text-white px-10 py-[15px] rounded-[5px] font-bold text-sm tracking-[0.2px] transition-colors">
+                      SHOP NOW
+                    </button>
                   </div>
                 </div>
               </div>
@@ -73,7 +81,7 @@ const HeroCarousel = () => {
         </div>
       ))}
 
-      {/* Navigation Arrows */}
+      {/* Navigation */}
       <button
         onClick={prevSlide}
         className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white hover:text-white/80 transition-colors z-20"
@@ -87,7 +95,7 @@ const HeroCarousel = () => {
         <ChevronRight className="w-10 h-10 md:w-12 md:h-12" />
       </button>
 
-      {/* Dots Indicator */}
+      {/* Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
         {slides.map((_, index) => (
           <button
