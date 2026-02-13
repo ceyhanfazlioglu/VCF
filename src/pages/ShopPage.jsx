@@ -3,39 +3,41 @@ import { ChevronRight, LayoutGrid, List } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import { Icon } from '@iconify/react';
 
+// Category data
 const categories = [
   {
     id: 1,
     title: 'CLOTHS',
     itemCount: 5,
-    image: '/src/assets/shop/category-1.jpg'
+    image: '/images/shop/category-1.jpg'
   },
   {
     id: 2,
     title: 'CLOTHS',
     itemCount: 5,
-    image: '/src/assets/shop/category-2.jpg'
+    image: '/images/shop/category-2.jpg'
   },
   {
     id: 3,
     title: 'CLOTHS',
     itemCount: 5,
-    image: '/src/assets/shop/category-3.jpg'
+    image: '/images/shop/category-3.jpg'
   },
   {
     id: 4,
     title: 'CLOTHS',
     itemCount: 5,
-    image: '/src/assets/shop/category-4.jpg'
+    image: '/images/shop/category-4.jpg'
   },
   {
     id: 5,
     title: 'CLOTHS',
     itemCount: 5,
-    image: '/src/assets/shop/category-5.jpg'
+    image: '/images/shop/category-5.jpg'
   }
 ];
 
+// Product data - 12 products
 const products = [
   {
     id: 1,
@@ -43,7 +45,7 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-1.jpg',
+    image: '/images/products-shop/product-shop-1.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   },
   {
@@ -52,7 +54,7 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-2.jpg',
+    image: '/images/products-shop/product-shop-2.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   },
   {
@@ -61,7 +63,7 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-3.jpg',
+    image: '/images/products-shop/product-shop-3.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   },
   {
@@ -70,7 +72,7 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-4.jpg',
+    image: '/images/products-shop/product-shop-4.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   },
   {
@@ -79,7 +81,7 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-5.jpg',
+    image: '/images/products-shop/product-shop-5.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   },
   {
@@ -88,7 +90,7 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-6.jpg',
+    image: '/images/products-shop/product-shop-6.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   },
   {
@@ -97,7 +99,7 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-7.jpg',
+    image: '/images/products-shop/product-shop-7.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   },
   {
@@ -106,7 +108,7 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-8.jpg',
+    image: '/images/products-shop/product-shop-8.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   },
   {
@@ -115,7 +117,7 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-9.jpg',
+    image: '/images/products-shop/product-shop-9.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   },
   {
@@ -124,7 +126,7 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-10.jpg',
+    image: '/images/products-shop/product-shop-10.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   },
   {
@@ -133,7 +135,7 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-11.jpg',
+    image: '/images/products-shop/product-shop-11.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   },
   {
@@ -142,22 +144,25 @@ const products = [
     department: 'English Department',
     originalPrice: 16.48,
     salePrice: 6.48,
-    image: '/src/assets/products-shop/product-shop-12.jpg',
+    image: '/images/products-shop/product-shop-12.jpg',
     colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42']
   }
 ];
 
 const ShopPage = () => {
-  const [viewMode, setViewMode] = useState('grid'); 
-  const [currentPage, setCurrentPage] = useState(2); 
+  const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
+  const [currentPage, setCurrentPage] = useState(2); // Current page is 2 based on design
 
   return (
     <div className="w-full">
+      {/* Page Header */}
       <div className="bg-[#FAFAFA]">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            {/* Title */}
             <h1 className="text-2xl font-bold text-[#252B42]">Shop</h1>
             
+            {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-sm">
               <a href="/" className="font-bold text-[#252B42] hover:text-[#23A6F0]">
                 Home
@@ -169,6 +174,7 @@ const ShopPage = () => {
         </div>
       </div>
 
+      {/* Category Cards Section */}
       <div className="bg-[#FAFAFA] pb-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -192,14 +198,18 @@ const ShopPage = () => {
         </div>
       </div>
 
+      {/* Filter Bar */}
       <div className="border-b bg-white">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            {/* Results count */}
             <p className="text-sm text-[#737373] font-bold">
               Showing all 12 results
             </p>
 
+            {/* Right side controls */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              {/* View mode toggle */}
               <div className="flex items-center gap-2">
                 <span className="text-sm text-[#737373] font-bold">Views:</span>
                 <button
@@ -224,6 +234,7 @@ const ShopPage = () => {
                 </button>
               </div>
 
+              {/* Sort dropdown */}
               <select className="px-4 py-2 border border-gray-300 rounded bg-[#F9F9F9] text-[#737373] text-sm font-normal min-w-[200px]">
                 <option>Popularity</option>
                 <option>Price: Low to High</option>
@@ -231,6 +242,7 @@ const ShopPage = () => {
                 <option>Newest</option>
               </select>
 
+              {/* Filter button */}
               <button className="px-6 py-2 bg-[#23A6F0] text-white rounded font-bold text-sm hover:bg-[#1a8ad1] transition-colors">
                 Filter
               </button>
@@ -239,6 +251,7 @@ const ShopPage = () => {
         </div>
       </div>
 
+      {/* Products Grid */}
       <div className="bg-white py-12">
         <div className="container mx-auto px-4">
           <div className={`grid gap-6 ${
@@ -253,6 +266,7 @@ const ShopPage = () => {
         </div>
       </div>
 
+      {/* Pagination */}
       <div className="border-t bg-white">
         <div className="container mx-auto px-4 py-8">
           <div className="flex justify-center">
@@ -277,6 +291,7 @@ const ShopPage = () => {
         </div>
       </div>
 
+      {/* Partner Logos */}
 <div className="bg-[#FAFAFA] py-12">
   <div className="container mx-auto px-4">
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
@@ -293,6 +308,7 @@ const ShopPage = () => {
           className="grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100 cursor-pointer p-4"
           title={logo.name}
         >
+          {/* SVG/Text yerine Icon bileşenini kullanıyoruz */}
           <Icon 
             icon={logo.icon} 
             className="w-16 h-16 md:w-20 md:h-20 text-[#737373]" 
