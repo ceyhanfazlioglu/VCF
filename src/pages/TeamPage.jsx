@@ -1,14 +1,13 @@
 import React from 'react';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
-// Team members data - Only 2 members
 const teamMembers = [
   {
     id: 1,
     name: "Gökhan Özdemir",
     profession: "Project Manager",
     image: "/images/team/gokhan-ozdemir.jpg",
-    bgColor: "#F3CD03", // Yellow background
+    bgColor: "#F3CD03", 
     social: {
       facebook: "#",
       instagram: "#",
@@ -20,7 +19,7 @@ const teamMembers = [
     name: "Ceyhan Fazlıoğlu",
     profession: "Full Stack Developer",
     image: "/images/team/ceyhan-fazlioglu.jpg",
-    bgColor: "#E5E5E5", // Gray background
+    bgColor: "#E5E5E5", 
     social: {
       facebook: "#",
       instagram: "#",
@@ -29,11 +28,9 @@ const teamMembers = [
   }
 ];
 
-// Team Card Component
 const TeamCard = ({ member }) => {
   return (
     <div className="bg-white overflow-hidden">
-      {/* Image with colored background */}
       <div 
         className="h-64 md:h-80 flex items-end justify-center overflow-hidden"
         style={{ backgroundColor: member.bgColor }}
@@ -45,19 +42,15 @@ const TeamCard = ({ member }) => {
         />
       </div>
 
-      {/* Member Info */}
       <div className="p-6 text-center">
-        {/* Name */}
         <h3 className="text-base font-bold text-[#252B42] mb-2">
           {member.name}
         </h3>
 
-        {/* Profession */}
         <p className="text-sm font-bold text-[#737373] mb-4">
           {member.profession}
         </p>
 
-        {/* Social Media Icons */}
         <div className="flex justify-center gap-5">
           <a 
             href={member.social.facebook}
@@ -86,12 +79,10 @@ const TeamCard = ({ member }) => {
   );
 };
 
-// Main Team Page Component
 const TeamPage = () => {
   return (
     <div className="w-full bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
-        {/* Hero Section */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#252B42] mb-6">
             Meet Our Team
@@ -103,7 +94,6 @@ const TeamPage = () => {
           </p>
         </div>
 
-        {/* Team Grid - Only 2 members */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {teamMembers.map((member) => (
             <TeamCard key={member.id} member={member} />

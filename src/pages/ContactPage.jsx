@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Office locations data
 const offices = [
   {
     id: 1,
@@ -39,7 +38,6 @@ const offices = [
 const ContactPage = () => {
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-[#17a2b8] to-[#0e7f95] relative overflow-hidden">
-      {/* Background Image - No opacity, positioned right */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -48,14 +46,11 @@ const ContactPage = () => {
         }}
       />
       
-      {/* Gradient overlay from left - creates fade effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#17a2b8] via-[#17a2b8]/80 to-transparent" />
 
-      {/* Content Container */}
       <div className="relative z-10">
         <div className="container mx-auto px-4 py-12 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-            {/* Left Column - Hero Section */}
             <div className="text-white space-y-6 lg:py-20">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                 CONTACT US
@@ -70,37 +65,30 @@ const ContactPage = () => {
               </button>
             </div>
 
-            {/* Right Column - Office Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
               {offices.map((office) => (
                 <div 
                   key={office.id}
                   className="text-white space-y-4"
                 >
-                  {/* City Name */}
                   <h3 className="text-2xl md:text-3xl font-bold">
                     {office.city}
                   </h3>
 
-                  {/* Address */}
                   <p className="text-base leading-relaxed">
                     {office.address}
                   </p>
 
-                  {/* Divider */}
                   <div className="w-16 h-0.5 bg-[#23A6F0]"></div>
 
-                  {/* Postal Code */}
                   <p className="text-base font-bold">
                     {office.postalCode}
                   </p>
 
-                  {/* Phone */}
                   <p className="text-base">
                     Phone : {office.phone}
                   </p>
 
-                  {/* Fax */}
                   <p className="text-base">
                     Fax : {office.fax}
                   </p>

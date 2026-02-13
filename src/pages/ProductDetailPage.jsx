@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { ChevronRight, ChevronLeft, Heart, ShoppingCart, Eye, Star } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 
-// Mock product data
 const productData = {
   id: 1,
   title: 'Floating Phone',
@@ -25,7 +24,6 @@ const productData = {
   ]
 };
 
-// Bestseller products
 const bestsellerProducts = [
   {
     id: 1,
@@ -107,7 +105,7 @@ const ProductDetailPage = () => {
   const [selectedColor, setSelectedColor] = useState(0);
   const [activeTab, setActiveTab] = useState('description');
 
-  const product = productData; // In real app, fetch by id
+  const product = productData; 
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
@@ -119,7 +117,6 @@ const ProductDetailPage = () => {
 
   return (
     <div className="w-full">
-      {/* Breadcrumb */}
       <div className="bg-[#FAFAFA]">
         <div className="container mx-auto px-4 py-6">
           <nav className="flex items-center gap-2 text-sm font-bold">
@@ -132,13 +129,10 @@ const ProductDetailPage = () => {
         </div>
       </div>
 
-      {/* Product Section */}
       <div className="bg-[#FAFAFA] py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Image Gallery */}
             <div>
-              {/* Main Image */}
               <div className="relative bg-white rounded-lg overflow-hidden mb-4">
                 <img 
                   src={product.images[currentImageIndex]}
@@ -159,7 +153,6 @@ const ProductDetailPage = () => {
                 </button>
               </div>
 
-              {/* Thumbnail Images */}
               <div className="flex gap-4">
                 {product.images.map((image, index) => (
                   <button
@@ -179,13 +172,11 @@ const ProductDetailPage = () => {
               </div>
             </div>
 
-            {/* Product Info */}
             <div>
               <h1 className="text-2xl font-normal text-[#252B42] mb-4">
                 {product.title}
               </h1>
 
-              {/* Rating */}
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => (
@@ -200,12 +191,10 @@ const ProductDetailPage = () => {
                 </span>
               </div>
 
-              {/* Price */}
               <div className="text-2xl font-bold text-[#252B42] mb-4">
                 ${product.price.toFixed(2)}
               </div>
 
-              {/* Availability */}
               <div className="flex items-center gap-2 mb-6">
                 <span className="text-sm font-bold text-[#737373]">
                   Availability :
@@ -215,12 +204,10 @@ const ProductDetailPage = () => {
                 </span>
               </div>
 
-              {/* Description */}
               <p className="text-sm text-[#858585] leading-relaxed mb-6 pb-6 border-b border-gray-200">
                 {product.description}
               </p>
 
-              {/* Colors */}
               <div className="flex gap-2 mb-16">
                 {product.colors.map((color, index) => (
                   <button
@@ -234,7 +221,6 @@ const ProductDetailPage = () => {
                 ))}
               </div>
 
-              {/* Actions */}
               <div className="flex gap-3">
                 <button className="px-6 py-3 bg-[#23A6F0] text-white rounded font-bold text-sm hover:bg-[#1a8ad1] transition-colors">
                   Select Options
@@ -254,7 +240,6 @@ const ProductDetailPage = () => {
         </div>
       </div>
 
-      {/* Tabs Section */}
       <div className="bg-white border-b">
         <div className="container mx-auto px-4">
           <nav className="flex justify-center gap-12">
@@ -292,11 +277,9 @@ const ProductDetailPage = () => {
         </div>
       </div>
 
-      {/* Tab Content */}
       <div className="bg-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Image Column */}
             <div className="rounded-lg overflow-hidden">
               <img 
                 src="/images/products/product-detail-content.jpg"
@@ -305,7 +288,6 @@ const ProductDetailPage = () => {
               />
             </div>
 
-            {/* Description Column */}
             <div>
               <h3 className="text-2xl font-bold text-[#252B42] mb-6">
                 the quick fox jumps over
@@ -321,7 +303,6 @@ const ProductDetailPage = () => {
               </p>
             </div>
 
-            {/* Features Column */}
             <div>
               <h3 className="text-2xl font-bold text-[#252B42] mb-6">
                 the quick fox jumps over
@@ -351,7 +332,6 @@ const ProductDetailPage = () => {
         </div>
       </div>
 
-      {/* Bestseller Products */}
       <div className="bg-[#FAFAFA] py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-[#252B42] mb-8">
@@ -365,14 +345,13 @@ const ProductDetailPage = () => {
         </div>
       </div>
 
-      {/* Partner Logos */}
       <div className="bg-white py-12 border-t border-b">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
             {[
-              { id: 1, icon: "fa-brands:hooli", name: "Hooli" },
+              { id: 1, icon: "fa7-brands:hooli", name: "Hooli" },
               { id: 2, icon: "fa-brands:lyft", name: "Lyft" },
-              { id: 3, icon: "fa-brands:pied-piper-hat", name: "Pied Piper" },
+              { id: 3, icon: "fa-brands:pied-piper-hat", name: "Pied Piper" }, 
               { id: 4, icon: "fa-brands:stripe", name: "Stripe" },
               { id: 5, icon: "fa-brands:aws", name: "AWS" },
               { id: 6, icon: "fa-brands:reddit-alien", name: "Reddit" },
