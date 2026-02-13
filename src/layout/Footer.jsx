@@ -4,7 +4,6 @@ import { Facebook, Instagram, Twitter } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="w-full bg-white">
-      {/* Brand and Social - Mobile version at top */}
       <div className="bg-[#FAFAFA] border-b md:hidden">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col items-center gap-4">
@@ -24,11 +23,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Links - Figma Mobile: 414×1342 */}
       <div className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-6">
-            {/* Company Info */}
             <div>
               <h3 className="text-[#252B42] font-bold mb-4 md:mb-6">Company Info</h3>
               <ul className="space-y-3">
@@ -39,7 +36,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Legal */}
             <div>
               <h3 className="text-[#252B42] font-bold mb-4 md:mb-6">Legal</h3>
               <ul className="space-y-3">
@@ -50,7 +46,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Features */}
             <div>
               <h3 className="text-[#252B42] font-bold mb-4 md:mb-6">Features</h3>
               <ul className="space-y-3">
@@ -61,7 +56,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Resources */}
             <div>
               <h3 className="text-[#252B42] font-bold mb-4 md:mb-6">Resources</h3>
               <ul className="space-y-3">
@@ -72,11 +66,9 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Get In Touch */}
             <div>
               <h3 className="text-[#252B42] font-bold mb-4 md:mb-6">Get In Touch</h3>
               <div>
-                {/* Email Subscribe Form */}
                 <form className="w-full max-w-sm">
                   <div className="flex">
                     <input
@@ -99,12 +91,11 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Bottom - Desktop only shows brand & social here */}
       <div className="hidden md:block bg-[#FAFAFA] border-t">
         <div className="container mx-auto px-4 py-6">
           <div className="flex justify-between items-center">
             <p className="text-[#737373] text-sm">
-              Made With Love By Finland All Right Reserved
+              Made With Love By VCF All Right Reserved
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-[#23A6F0] hover:text-[#1a8cd1]">
@@ -125,7 +116,7 @@ const Footer = () => {
       <div className="md:hidden bg-[#FAFAFA] border-t">
         <div className="container mx-auto px-4 py-6 text-center">
           <p className="text-[#737373] text-sm">
-            Made With Love By Finland All Right Reserved
+            Made With Love By VCF All Right Reserved
           </p>
         </div>
       </div>

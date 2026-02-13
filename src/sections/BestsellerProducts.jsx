@@ -80,7 +80,6 @@ const BestsellerProducts = () => {
   return (
     <section className="py-12 md:py-20">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <div className="text-center mb-8 md:mb-12 max-w-[692px] mx-auto">
           <h4 className="text-[#737373] text-sm md:text-base mb-2">Featured Products</h4>
           <h2 className="text-2xl md:text-3xl font-bold text-[#252B42] mb-2">
@@ -91,9 +90,7 @@ const BestsellerProducts = () => {
           </p>
         </div>
 
-        {/* Products Grid - Figma Layout */}
         <div className="max-w-[1049px] mx-auto">
-          {/* Desktop: 2 rows × 4 columns */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[30px]">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />

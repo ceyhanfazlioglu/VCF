@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 
-// Initial State
 const initialState = {
   cart: [],
   user: null,
@@ -10,7 +9,6 @@ const initialState = {
   error: null,
 };
 
-// Cart Reducer
 const cartReducer = (state = initialState.cart, action) => {
   switch (action.type) {
     case 'ADD_TO_CART':
@@ -24,7 +22,6 @@ const cartReducer = (state = initialState.cart, action) => {
   }
 };
 
-// User Reducer
 const userReducer = (state = initialState.user, action) => {
   switch (action.type) {
     case 'SET_USER':
@@ -36,7 +33,6 @@ const userReducer = (state = initialState.user, action) => {
   }
 };
 
-// Products Reducer
 const productsReducer = (state = initialState.products, action) => {
   switch (action.type) {
     case 'SET_PRODUCTS':
@@ -48,7 +44,6 @@ const productsReducer = (state = initialState.products, action) => {
   }
 };
 
-// Loading Reducer
 const loadingReducer = (state = initialState.loading, action) => {
   switch (action.type) {
     case 'SET_LOADING':
@@ -58,7 +53,6 @@ const loadingReducer = (state = initialState.loading, action) => {
   }
 };
 
-// Error Reducer
 const errorReducer = (state = initialState.error, action) => {
   switch (action.type) {
     case 'SET_ERROR':
@@ -70,7 +64,6 @@ const errorReducer = (state = initialState.error, action) => {
   }
 };
 
-// Combine Reducers
 const rootReducer = combineReducers({
   cart: cartReducer,
   user: userReducer,
@@ -79,7 +72,6 @@ const rootReducer = combineReducers({
   error: errorReducer,
 });
 
-// Create Store
 export const store = createStore(
   rootReducer,
   applyMiddleware(thunk)

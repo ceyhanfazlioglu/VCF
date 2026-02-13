@@ -7,11 +7,9 @@ const Header = () => {
 
   return (
     <header className="w-full">
-      {/* Top Bar - Hidden on mobile */}
       <div className="hidden md:block bg-[#252B42] text-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-row justify-between items-center py-2 text-sm">
-            {/* Contact Info */}
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
@@ -22,11 +20,9 @@ const Header = () => {
                 <span>michelle.rivera@example.com</span>
               </div>
             </div>
-            {/* Promo Text */}
             <div className="text-center">
               Follow Us and get a chance to win 80% off
             </div>
-            {/* Social Links */}
             <div className="flex items-center gap-2">
               <span>Follow Us :</span>
               <div className="flex gap-2">
@@ -40,35 +36,22 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Main Navigation */}
       <div className="bg-white border-b">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-4">
-            {/* Logo */}
             <Link to="/" className="text-2xl font-bold text-[#252B42]">
-              BrandName
+              VCF
             </Link>
 
-            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-6">
               <Link to="/" className="text-[#737373] hover:text-[#23A6F0]">Home</Link>
-              <div className="relative group">
-                <button className="flex items-center gap-1 text-[#737373] hover:text-[#23A6F0]">
-                  Shop
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-              </div>
-              <Link to="/about" className="text-[#737373] hover:text-[#23A6F0]">About</Link>
+              <Link to="/shop" className="text-[#737373] hover:text-[#23A6F0]">Shop</Link>
+              <Link to="/team" className="text-[#737373] hover:text-[#23A6F0]">Team</Link>
               <Link to="/blog" className="text-[#737373] hover:text-[#23A6F0]">Blog</Link>
               <Link to="/contact" className="text-[#737373] hover:text-[#23A6F0]">Contact</Link>
-              <Link to="/pages" className="text-[#737373] hover:text-[#23A6F0]">Pages</Link>
             </nav>
 
-            {/* Right Side Icons */}
             <div className="flex items-center gap-4">
-              {/* Desktop only */}
               <Link to="/login" className="hidden md:flex items-center gap-1 text-[#23A6F0] hover:underline">
                 <User className="w-4 h-4" />
                 <span className="text-sm">Login / Register</span>
@@ -85,7 +68,6 @@ const Header = () => {
                 <span className="text-sm">1</span>
               </button>
 
-              {/* Mobile Hamburger */}
               <button
                 className="md:hidden text-[#252B42]"
                 onClick={() => setMenuOpen(!menuOpen)}
@@ -96,13 +78,12 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Dropdown */}
         {menuOpen && (
           <div className="md:hidden border-t bg-white">
             <nav className="container mx-auto px-4 py-4 flex flex-col items-center gap-6 text-lg">
               <Link to="/" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>Home</Link>
               <Link to="/shop" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>Shop</Link>
-              <Link to="/about" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>About</Link>
+              <Link to="/team" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>Team</Link>
               <Link to="/blog" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>Blog</Link>
               <Link to="/contact" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>Contact</Link>
               <Link to="/pages" className="text-[#737373] hover:text-[#23A6F0]" onClick={() => setMenuOpen(false)}>Pages</Link>

@@ -2,7 +2,6 @@ import { apiService } from '../../services/api';
 import { setProducts, setLoading, setError, clearError } from './actions';
 import { toast } from 'react-toastify';
 
-// Fetch Products (Thunk Action)
 export const fetchProducts = () => {
   return async (dispatch) => {
     dispatch(setLoading(true));
@@ -20,7 +19,6 @@ export const fetchProducts = () => {
   };
 };
 
-// Fetch Single Product (Thunk Action)
 export const fetchProduct = (productId) => {
   return async (dispatch) => {
     dispatch(setLoading(true));
@@ -39,7 +37,6 @@ export const fetchProduct = (productId) => {
   };
 };
 
-// Login (Thunk Action)
 export const loginUser = (credentials) => {
   return async (dispatch) => {
     dispatch(setLoading(true));
@@ -49,10 +46,8 @@ export const loginUser = (credentials) => {
       const response = await apiService.login(credentials);
       const { token, user } = response.data;
       
-      // Store token
       localStorage.setItem('token', token);
       
-      // Update user in store
       dispatch({ type: 'SET_USER', payload: user });
       dispatch(setLoading(false));
       
@@ -67,7 +62,6 @@ export const loginUser = (credentials) => {
   };
 };
 
-// Signup (Thunk Action)
 export const signupUser = (userData) => {
   return async (dispatch) => {
     dispatch(setLoading(true));

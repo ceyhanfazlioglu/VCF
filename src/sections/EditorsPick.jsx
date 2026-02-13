@@ -27,7 +27,6 @@ const EditorsPick = () => {
   return (
     <section className="py-12 md:py-20 bg-[#FAFAFA]">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-[#252B42] mb-2">
             EDITOR'S PICK
@@ -37,9 +36,7 @@ const EditorsPick = () => {
           </p>
         </div>
 
-        {/* Category Grid - Exact Figma Layout */}
         <div className="flex flex-col md:flex-row gap-4 md:gap-[30px] max-w-[1050px] mx-auto">
-          {/* MEN - 510px × 500px */}
           <div className="relative overflow-hidden group cursor-pointer md:w-[510px]">
             <img
               src={categories[0].image}
@@ -51,7 +48,6 @@ const EditorsPick = () => {
             </div>
           </div>
 
-          {/* WOMEN - Flexible width */}
           <div className="relative overflow-hidden group cursor-pointer md:flex-1">
             <img
               src={categories[1].image}
@@ -63,9 +59,7 @@ const EditorsPick = () => {
             </div>
           </div>
 
-          {/* Right Column - ACCESSORIES & KIDS stacked */}
           <div className="flex flex-col gap-4 md:gap-[16px] md:w-[240px]">
-            {/* ACCESSORIES - ~242px height */}
             <div className="relative overflow-hidden group cursor-pointer">
               <img
                 src={categories[2].image}
@@ -77,7 +71,6 @@ const EditorsPick = () => {
               </div>
             </div>
 
-            {/* KIDS - ~242px height */}
             <div className="relative overflow-hidden group cursor-pointer">
               <img
                 src={categories[3].image}

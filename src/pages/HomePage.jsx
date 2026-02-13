@@ -9,10 +9,8 @@ import FeaturedPosts from '../sections/FeaturedPosts';
 const HomePage = () => {
   return (
     <>
-      {/* Hero - Full Width, No Container */}
       <HeroCarousel />
       
-      {/* Rest of sections */}
       <EditorsPick />
       <BestsellerProducts />
       <VitaClassic />

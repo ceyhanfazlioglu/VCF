@@ -4,11 +4,8 @@ const NeuralUniverse = () => {
   return (
     <section className="py-12 md:py-20">
       <div className="container mx-auto px-4">
-        {/* Figma Desktop: 1439×682px, Mobile: 414×999 */}
         <div className="max-w-[1439px] mx-auto">
-          {/* Mobile: Image on top, Desktop: 2 columns */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-[30px] items-center">
-            {/* Image - Figma Desktop: 704×682px, Mobile: full width on top */}
             <div className="w-full md:w-[704px] order-2 md:order-1">
               <img 
                 src="/assets/banners/banner-neural.jpg" 
@@ -17,7 +14,6 @@ const NeuralUniverse = () => {
               />
             </div>
 
-            {/* Content - Figma Desktop: 573×326px, Mobile: on top */}
             <div className="w-full md:w-[573px] space-y-6 text-center md:text-left order-1 md:order-2">
               <h5 className="text-[#23A6F0] text-sm md:text-base font-bold">
                 SUMMER 2020
