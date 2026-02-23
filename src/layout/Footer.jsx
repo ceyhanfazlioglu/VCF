@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Footer = () => {
@@ -29,7 +30,7 @@ const Footer = () => {
             <div>
               <h3 className="text-[#252B42] font-bold mb-4 md:mb-6">Company Info</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-[#737373] hover:text-[#23A6F0] block">About Us</a></li>
+                <li><Link to="/about" className="text-[#737373] hover:text-[#23A6F0] block">About Us</Link></li>
                 <li><a href="#" className="text-[#737373] hover:text-[#23A6F0] block">Carrier</a></li>
                 <li><a href="#" className="text-[#737373] hover:text-[#23A6F0] block">We are hiring</a></li>
                 <li><a href="#" className="text-[#737373] hover:text-[#23A6F0] block">Blog</a></li>
@@ -39,7 +40,7 @@ const Footer = () => {
             <div>
               <h3 className="text-[#252B42] font-bold mb-4 md:mb-6">Legal</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-[#737373] hover:text-[#23A6F0] block">About Us</a></li>
+                <li><Link to="/about" className="text-[#737373] hover:text-[#23A6F0] block">About Us</Link></li>
                 <li><a href="#" className="text-[#737373] hover:text-[#23A6F0] block">Carrier</a></li>
                 <li><a href="#" className="text-[#737373] hover:text-[#23A6F0] block">We are hiring</a></li>
                 <li><a href="#" className="text-[#737373] hover:text-[#23A6F0] block">Blog</a></li>
@@ -112,7 +113,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Bottom - Mobile copyright */}
       <div className="md:hidden bg-[#FAFAFA] border-t">
         <div className="container mx-auto px-4 py-6 text-center">
           <p className="text-[#737373] text-sm">

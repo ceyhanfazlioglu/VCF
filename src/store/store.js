@@ -1,80 +1,16 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';  // ← { thunk } DEĞİL, thunk
+import logger from 'redux-logger';
+import rootReducer from './reducers/rootReducer';
 
-const initialState = {
-  cart: [],
-  user: null,
-  products: [],
-  loading: false,
-  error: null,
-};
-
-const cartReducer = (state = initialState.cart, action) => {
-  switch (action.type) {
-    case 'ADD_TO_CART':
-      return [...state, action.payload];
-    case 'REMOVE_FROM_CART':
-      return state.filter(item => item.id !== action.payload);
-    case 'CLEAR_CART':
-      return [];
-    default:
-      return state;
-  }
-};
-
-const userReducer = (state = initialState.user, action) => {
-  switch (action.type) {
-    case 'SET_USER':
-      return action.payload;
-    case 'LOGOUT':
-      return null;
-    default:
-      return state;
-  }
-};
-
-const productsReducer = (state = initialState.products, action) => {
-  switch (action.type) {
-    case 'SET_PRODUCTS':
-      return action.payload;
-    case 'ADD_PRODUCT':
-      return [...state, action.payload];
-    default:
-      return state;
-  }
-};
-
-const loadingReducer = (state = initialState.loading, action) => {
-  switch (action.type) {
-    case 'SET_LOADING':
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
-const errorReducer = (state = initialState.error, action) => {
-  switch (action.type) {
-    case 'SET_ERROR':
-      return action.payload;
-    case 'CLEAR_ERROR':
-      return null;
-    default:
-      return state;
-  }
-};
-
-const rootReducer = combineReducers({
-  cart: cartReducer,
-  user: userReducer,
-  products: productsReducer,
-  loading: loadingReducer,
-  error: errorReducer,
-});
-
-export const store = createStore(
+const store = createStore(
   rootReducer,
-  applyMiddleware(thunk)
+  applyMiddleware(thunk, logger)
 );
+
+// Make store accessible in browser console for debugging
+if (typeof window !== 'undefined') {
+  window.store = store;
+}
 
 export default store;

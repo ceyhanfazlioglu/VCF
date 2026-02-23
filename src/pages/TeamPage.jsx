@@ -6,8 +6,8 @@ const teamMembers = [
     id: 1,
     name: "Gökhan Özdemir",
     profession: "Project Manager",
-    image: "/images/team/gokhan-ozdemir.jpg",
-    bgColor: "#F3CD03", 
+    image: "/images/team/team-1-user-3.jpg",
+    bgColor: "#23A6F0",
     social: {
       facebook: "#",
       instagram: "#",
@@ -18,8 +18,8 @@ const teamMembers = [
     id: 2,
     name: "Ceyhan Fazlıoğlu",
     profession: "Full Stack Developer",
-    image: "/images/team/ceyhan-fazlioglu.jpg",
-    bgColor: "#E5E5E5", 
+    image: "/images/team/team-1-user-2.jpg",
+    bgColor: "#E5E5E5",
     social: {
       facebook: "#",
       instagram: "#",

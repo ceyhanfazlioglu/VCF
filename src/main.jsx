@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import App from "./App.jsx";
 import "./index.css";
-import { store } from "./store/store";
+import store from "./store/store";  // ← { store } DEĞİL, store
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -1,82 +1,15 @@
-import { apiService } from '../../services/api';
-import { setProducts, setLoading, setError, clearError } from './actions';
-import { toast } from 'react-toastify';
+import axiosInstance from '../../api/axiosInstance';
+import { setRoles } from './clientActions';
 
-export const fetchProducts = () => {
+// Thunk Action Creator to fetch roles
+export const fetchRoles = () => {
   return async (dispatch) => {
-    dispatch(setLoading(true));
-    dispatch(clearError());
-    
     try {
-      const response = await apiService.getProducts();
-      dispatch(setProducts(response.data));
-      dispatch(setLoading(false));
+      const response = await axiosInstance.get('/roles');
+      dispatch(setRoles(response.data));
     } catch (error) {
-      dispatch(setError(error.message));
-      dispatch(setLoading(false));
-      toast.error('Failed to fetch products');
-    }
-  };
-};
-
-export const fetchProduct = (productId) => {
-  return async (dispatch) => {
-    dispatch(setLoading(true));
-    dispatch(clearError());
-    
-    try {
-      const response = await apiService.getProduct(productId);
-      dispatch(setLoading(false));
-      return response.data;
-    } catch (error) {
-      dispatch(setError(error.message));
-      dispatch(setLoading(false));
-      toast.error('Failed to fetch product');
-      throw error;
-    }
-  };
-};
-
-export const loginUser = (credentials) => {
-  return async (dispatch) => {
-    dispatch(setLoading(true));
-    dispatch(clearError());
-    
-    try {
-      const response = await apiService.login(credentials);
-      const { token, user } = response.data;
-      
-      localStorage.setItem('token', token);
-      
-      dispatch({ type: 'SET_USER', payload: user });
-      dispatch(setLoading(false));
-      
-      toast.success('Login successful!');
-      return response.data;
-    } catch (error) {
-      dispatch(setError(error.message));
-      dispatch(setLoading(false));
-      toast.error('Login failed');
-      throw error;
-    }
-  };
-};
-
-export const signupUser = (userData) => {
-  return async (dispatch) => {
-    dispatch(setLoading(true));
-    dispatch(clearError());
-    
-    try {
-      const response = await apiService.signup(userData);
-      dispatch(setLoading(false));
-      toast.success('Signup successful! Please login.');
-      return response.data;
-    } catch (error) {
-      dispatch(setError(error.message));
-      dispatch(setLoading(false));
-      toast.error('Signup failed');
-      throw error;
+      console.error('Error fetching roles:', error);
+      // Optionally dispatch error action
     }
   };
 };
